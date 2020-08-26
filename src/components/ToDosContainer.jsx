@@ -7,9 +7,10 @@ export default class toDosContainer extends React.Component {
          inputText:""
     }
     formSubmit=(e)=>{
-        e.preventDefault();
-        
+        e.preventDefault()
+        if(this.state.inputText.trim() !==""){
         this.props.addItemProps(this.state.inputText)
+        }
     }
     
     
