@@ -1,21 +1,12 @@
 import React from 'react'
+import ToDoneItem from "./ToDoneItem"
 
-export default function ToDonesContainer() {
+export default function ToDonesContainer(prop) {
 
-    const todones=[
-        {text:"create a website",done:true},
-        {text:"create a problem",done:true},
-        {text:"create a possibility",done:true},
-        {text:"create nothing ",done:true},
-    ]
-    const toDonesItem=todones.map(task=>{
+    
+    const toDonesItem=prop.toDoneProps.map(task=>{
         return (
-            <div className="todones-item">
-                <p>{task.text}</p>
-                <div className="action">
-                    <button className="btn">&#10004;</button>
-                </div>
-            </div>
+            <ToDoneItem updateitemProps={prop.updateitemProps} taskProp={task}/>
         )
     });   
     return (
